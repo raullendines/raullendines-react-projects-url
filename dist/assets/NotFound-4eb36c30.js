@@ -1,0 +1,1 @@
+import{j as n}from"./index-7baecc66.js";import{L as a}from"./Link-40ea1be3.js";const o=()=>n.jsxs("div",{className:"parent-container",children:[n.jsx("h1",{children:"404 - Página no encontrada"}),n.jsx("p",{children:"Lo sentimos, la página que estás buscando no existe."}),n.jsx(a,{to:"/",children:"Volver la la pagina principal"})]});export{o as default};

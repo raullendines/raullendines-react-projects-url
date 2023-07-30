@@ -1,0 +1,1 @@
+import{j as r}from"./index-7baecc66.js";import{L as s}from"./Link-40ea1be3.js";function e(){return r.jsxs("div",{children:[r.jsx("h1",{children:"About"}),r.jsxs("div",{children:[r.jsx("p",{children:"Esta es una pagina about"}),r.jsx(s,{to:"/",children:" Ir al home "})]})]})}export{e as default};
