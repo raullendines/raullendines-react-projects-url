@@ -1,24 +1,42 @@
-# Compiled class file
-*.class
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
 
-# Log file
+# Output directories
+build/
+dist/
+coverage/
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# BlueJ files
-*.ctxt
+# macOS files
+.DS_Store
+Icon?
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# OS-generated files
+Thumbs.db
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Editor-specific files
+*.swp
+*~
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Log files
+*.log
+logs
+log.txt
