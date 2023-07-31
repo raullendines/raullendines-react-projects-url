@@ -1,14 +1,19 @@
-import { Link } from '../router/Link.jsx'
-
+import { Link, useParams } from 'react-router-dom';
+import { aboutPage } from '../js/services/languages.js';
+import useLanguage from '../js/services/languages.js';
 export default function AboutPage() {
+
+  const { lang } = useParams();
+  const i18n = useLanguage(lang ?? 'es', aboutPage);
+
+
   return (
     <div>
-      <h1>About</h1>
+      <h1>{i18n.title}</h1>
       <div>
-        <p>Esta es una pagina about</p>
-        <Link to='/'> Ir al home </Link>
+        <p>{i18n.desciption}</p>
+        <Link to='/es/'>{i18n.button}</Link>
       </div>
-      
-    </div>  
+    </div>
   );
 }

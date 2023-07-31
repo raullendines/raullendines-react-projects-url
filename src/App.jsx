@@ -1,39 +1,27 @@
-import { Suspense, lazy } from "react";
+// App.js
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/Home.jsx';
+import NotFound from './pages/NotFound.jsx';
+import AboutPage from './pages/About.jsx';
+import MoviePage from './pages/MoviePage.jsx';
+import SearchPage from './pages/Search.jsx';
+import TicTacToe from './pages/TicTacToe.jsx';
 
-import Route from "./router/Route";
-import Router from "./router/Router";
-
-//De esta forma no renderizará paginas no usadas y mejorara el rendimiento
-const HomePage = lazy(() => import('./pages/Home.jsx'))
-const NotFound = lazy(() => import('./pages/NotFound.jsx'))
-const AboutPage = lazy(() => import('./pages/About.jsx'))
-const MoviePage = lazy(() => import('./pages/MoviePage.jsx'))
-const SearchPage = lazy(() => import('./pages/Search.jsx'))
-const TicTacToe = lazy(() => import('./pages/TicTacToe.jsx'))
-
-const routes = [
-
-  {
-    path: '/search/:query',
-    Component: SearchPage
-  },
-  {
-    path: '/:lang/',
-    Component: HomePage
-  },
- ]
 
 function App() {
-  
-  return (    
+  return (
     <main>
       <Suspense fallback={null}>
-        <Router routes={routes} defaujltComponent={NotFound}>
-          <Route path='/' Component={HomePage}></Route>
-          <Route path='/about' Component={AboutPage}></Route>
-          <Route path='/movies' Component={MoviePage}></Route>
-          <Route path='/tictactoe' Component={TicTacToe}></Route>
-
+        <Router>
+          <Routes>
+            <Route path='/:lang/' element={<HomePage />} />
+            <Route path='/:lang/about' element={<AboutPage />} />
+            <Route path='/:lang/movies' element={<MoviePage />} />
+            <Route path='/:lang/search/:query' element={<SearchPage />} />
+            <Route path='/:lang/tictactoe' element={<TicTacToe />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
         </Router>
       </Suspense>
     </main>
