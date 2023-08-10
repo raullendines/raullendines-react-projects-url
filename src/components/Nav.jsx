@@ -1,89 +1,114 @@
-import React, { useMemo } from 'react';
+// Nav.jsx
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
+const LangDropdown = ({ selectedLanguage, languages, handleLanguageChange }) => (
+  <div>
+    <select
+      className="text-white"
+      value={selectedLanguage}
+      onChange={(e) => {
+        const selectedLang = e.target.value;
+        handleLanguageChange(selectedLang);
+      }}
+    >
+      {languages.map((language) => (
+        <option key={language} value={language}>
+          {language}
+        </option>
+      ))}
+    </select>
+  </div>
+);
 
-import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+const NavLinks = ({ location, selectedLanguage, navLinks }) => (
+  <div className={`hidden md:flex items-center space-x-4`}>
+    {navLinks.map((navLink) => (
+      <NavLink
+        key={navLink.path}
+        className={`text-white ${
+          location.pathname.includes(navLink.path) ? 'font-bold' : ''
+        }`}
+        to={navLink.to}
+        exact={navLink.exact}
+      >
+        {navLink.text}
+      </NavLink>
+    ))}
+  </div>
+);
 
-const navigation = [
-    { name: 'Home', href: '/es/', current: true },
-    { name: 'About', href: '/es/about/', current: false },
-    { name: 'TicTacToe', href: '/es/tictactoe/', current: false },
-    { name: 'Movies', href: '/es/movies/', current: false },
-]
+const Nav = () => {
+  const { lang } = useParams();
+  const [isOpen, setOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(lang); // Initialize with URL parameter
+  const languages = ['en', 'ca', 'es'];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+  const location = useLocation();
+  const navigate = useNavigate();
 
-function Nav() {
+  const handleLanguageChange = (selectedLang) => {
+    const newPath = location.pathname.replace(/\/[a-z]+(?=\/|$)/, `/${selectedLang}`);
+    navigate(newPath);
+  };
+
+  useEffect(() => {
+    setSelectedLanguage(lang);
+  }, [lang]);
+
+  useEffect(() => {
+    const newLang = location.pathname.split('/')[1];
+    setSelectedLanguage(newLang);
+  }, [location]);
+
+  const navLinks = [
+    {
+      text: 'Home',
+      to: `/${selectedLanguage}`,
+      exact: true,
+      path: '',
+    },
+    {
+      text: 'About',
+      to: `/${selectedLanguage}/about`,
+      path: 'about',
+    },
+    {
+      text: 'Projects',
+      to: `/${selectedLanguage}/projects`,
+      path: 'projects',
+    },
+  ];
+
   return (
-    <Disclosure as="nav" className="bg-gray-800">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+    <nav className="bg-primary">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between p-4">
+          <div className="flex items-center">
+            <NavLink to={`/${selectedLanguage}`} exact>
+              <img src="src/images/logo_raul_blanco.svg" alt="Logo" className="h-8 w-8" />
+            </NavLink>
+            <button
+              type="button"
+              className={`text-white md:hidden ${isOpen ? 'is-active' : ''}`}
+              aria-label="menu"
+              aria-expanded={isOpen ? 'true' : 'false'}
+              onClick={() => setOpen(!isOpen)}
+            >
+              <span className="block" aria-hidden="true"></span>
+              <span className="block" aria-hidden="true"></span>
+              <span className="block" aria-hidden="true"></span>
+            </button>
           </div>
+          
+          
+          <NavLinks location={location} selectedLanguage={selectedLanguage} navLinks={navLinks} />
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
-  )
-}
+          <LangDropdown selectedLanguage={selectedLanguage} languages={languages} handleLanguageChange={handleLanguageChange} />
+          
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-export default React.memo(Nav);
+export default Nav;

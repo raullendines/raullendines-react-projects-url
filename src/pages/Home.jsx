@@ -14,9 +14,6 @@ export default function HomePage() {
       <div>
         <p>{i18n.description}</p>
         <Link to='/es/about'>{i18n.button}</Link>
-        <Link to='/es/movies'>movies</Link>
-        <Link to='/es/tictactoe'>tictactoe</Link>
-
       </div>
     </div>
   );

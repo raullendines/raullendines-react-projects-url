@@ -63,3 +63,6 @@ form {
   height: 100vh; 
 }
 
+#sidebar a.active {
+  color: red;
+}

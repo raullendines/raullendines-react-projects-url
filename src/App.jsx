@@ -1,4 +1,3 @@
-// App.js
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home.jsx';
@@ -7,31 +6,37 @@ import AboutPage from './pages/About.jsx';
 import MoviePage from './pages/MoviePage.jsx';
 import SearchPage from './pages/Search.jsx';
 import TicTacToe from './pages/TicTacToe.jsx';
+import ProjectsPage from './pages/Projects.jsx';
+
 import './styles.css';
 import Nav from './components/Nav.jsx';
+import EnterPassword from './components/EnterPassword.jsx';
 
 function App() {
   return (
-    <div className="flex flex-col h-screen">
-      <div>
-        <Nav />
-      </div>
+    <Router>
+      <div className="flex flex-col h-screen">
+        <div>
+          <Nav />
+        </div>
 
-      <div className="flex-grow">
-        <Suspense fallback={null}>
-          <Router>
+        <div className="flex-grow">
+          <Suspense fallback={null}>
             <Routes>
-              <Route path='/:lang/' element={<HomePage />} />
-              <Route path='/:lang/about' element={<AboutPage />} />
-              <Route path='/:lang/movies' element={<MoviePage />} />
-              <Route path='/:lang/search/:query' element={<SearchPage />} />
-              <Route path='/:lang/tictactoe' element={<TicTacToe />} />
-              <Route path='/*' element={<NotFound />} />
+              <Route path="/:lang/" element={<HomePage />} />
+              <Route path="/:lang/about" element={<AboutPage />} />
+              <Route path="/:lang/projects" element={<ProjectsPage />} />
+              <Route path="/:lang/movies" element={<MoviePage />} />
+              <Route path="/:lang/search/:query" element={<SearchPage />} />
+              <Route path="/:lang/tictactoe" element={<TicTacToe />} />
+              <Route path="/*" element={<NotFound />} />
             </Routes>
-          </Router>
-        </Suspense>
+          </Suspense>
+        </div>
+
+        {/*<EnterPassword/>*/}
       </div>
-    </div>
+    </Router>
   );
 }
 
