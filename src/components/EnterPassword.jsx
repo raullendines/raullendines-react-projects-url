@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../css/Password.css';
-import showPasswordIcon from '../images/visible.svg';
-import hidePasswordIcon from '../images/hide.svg';
+import showPasswordIcon from '../assets/images/visible.svg';
+import hidePasswordIcon from '../assets/images/hide.svg';
 
 
 export function usePasswordToggle(initialState = false) {
