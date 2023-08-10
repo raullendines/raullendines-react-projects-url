@@ -1,0 +1,41 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ProjectHeader from '../components/projects/ProjectHeader';
+import ProjectGallery from '../components/projects/ProjectGallery';
+import ProjectInfo from '../components/projects/ProjectInfo';
+import ProjectRelatedProjects from '../components/projects/ProjectRelatedProjects';
+import projects from '../data/projects';
+
+function SingleProject() {
+  const { projectId } = useParams(); // Access the project ID from the URL parameter
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    const selectedProject = projects.find((proj) => proj.id === parseInt(projectId));
+    setProject(selectedProject);
+  }, [projectId]);
+
+  return (
+    <div className="container mx-auto mt-10 sm:mt-20">
+      {project && (
+        <>
+          {/* Project header */}
+          <ProjectHeader singleProjectHeader={project} />
+
+          {/* Project gallery */}
+          <ProjectGallery projectImages={project.projectImages} />
+
+          {/* Project information */}
+          <ProjectInfo projectInfo={project.projectInfo} />
+
+          {/* Project related projects */}
+          {project.relatedProject && (
+            <ProjectRelatedProjects relatedProject={project.relatedProject} />
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default SingleProject;

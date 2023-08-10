@@ -7,8 +7,7 @@ import '../css/App.css';
 import { Movies } from '../components/Movies.jsx';
 import { useMovies } from '../hooks/useMovies.js';
 
-import { moviePage } from '../js/services/languages.js';
-import useLanguage from '../js/services/languages.js';
+import useLanguage, { moviePage } from '../js/services/languages.js';
 
 function useSearch(i18n) {
   const [search, updateSearch] = useState('');

@@ -64,7 +64,6 @@ const Nav = () => {
     {
       text: 'Home',
       to: `/${selectedLanguage}`,
-      exact: true,
       path: '',
     },
     {
@@ -85,7 +84,7 @@ const Nav = () => {
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center">
             <NavLink to={`/${selectedLanguage}`} exact>
-              <img src="src/images/logo_raul_blanco.svg" alt="Logo" className="h-8 w-8" />
+              <img src="/images/logo_raul_blanco.svg" alt="Logo" className="h-8 w-8" />
             </NavLink>
             <button
               type="button"

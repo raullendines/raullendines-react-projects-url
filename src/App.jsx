@@ -7,6 +7,7 @@ import MoviePage from './pages/MoviePage.jsx';
 import SearchPage from './pages/Search.jsx';
 import TicTacToe from './pages/TicTacToe.jsx';
 import ProjectsPage from './pages/Projects.jsx';
+import SingleProjectPage from './pages/SingleProject.jsx';
 
 import './styles.css';
 import Nav from './components/Nav.jsx';
@@ -15,7 +16,7 @@ import EnterPassword from './components/EnterPassword.jsx';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col">
         <div>
           <Nav />
         </div>
@@ -29,7 +30,9 @@ function App() {
               <Route path="/:lang/movies" element={<MoviePage />} />
               <Route path="/:lang/search/:query" element={<SearchPage />} />
               <Route path="/:lang/tictactoe" element={<TicTacToe />} />
-              <Route path="/*" element={<NotFound />} />
+              <Route path="/:lang/*" element={<NotFound />} />
+              <Route path="/:lang/projects/:projectId" element={<SingleProjectPage />} />
+
             </Routes>
           </Suspense>
         </div>

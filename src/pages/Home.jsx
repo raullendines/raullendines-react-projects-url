@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { homePage } from '../js/services/languages.js';
-import useLanguage from '../js/services/languages.js';
+import useLanguage, { homePage } from '../js/services/languages.js';
 
 export default function HomePage() {
   

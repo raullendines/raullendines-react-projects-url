@@ -1,3 +1,7 @@
+
+:root {
+  --navbar-height: 80px;
+}
 .page {
   display: flex;
   flex-direction: column;
@@ -60,7 +64,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 #sidebar a.active {

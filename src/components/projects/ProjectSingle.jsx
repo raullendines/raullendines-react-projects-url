@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function ProjectSingle({ project }) {
   return (
     <Link
-      to={`/projects/single-project/${project.id}`}
+      to={`/projects/projects/${project.id}`}
       className="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
       aria-label="Single Project"
     >

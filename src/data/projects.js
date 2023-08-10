@@ -7,22 +7,22 @@ const projects = [
 		title: 'Trivia App Game',
 		category: 'Mobile Application',
 		date: 'Sept 13, 2022',
-		img: 'src/images/eywa_project/menu_eywa.png',
+		img: '/images/eywa_project/menu_eywa.png',
 		projectImages: [
 			{
 				id: 1,
 				title: 'Trivia App Menu',
-				img: 'src/images/eywa_project/menu_eywa.png',
+				img: '/images/eywa_project/menu_eywa.png',
 			},
 			{
 				id: 2,
 				title: 'Trivia App Trivia',
-				img: 'src/images/eywa_project/trivia_eywa.png',
+				img: '/images/eywa_project/trivia_eywa.png',
 			},
 			{
 				id: 3,
 				title: 'Trivia App ScoreBoard',
-				img: 'src/images/eywa_project/score_eywa.png',
+				img: '/images/eywa_project/score_eywa.png',
 			},
 		],
 		projectInfo: {
@@ -96,7 +96,7 @@ const projects = [
 				{
 					id: 1,
 					title: 'Mobile UI',
-					img: 'src/images/eywa_project/eywa.png',
+					img: '/images/eywa_project/eywa.png',
 				}
 			],
 		},
@@ -106,23 +106,23 @@ const projects = [
 		id: 2,
 		title: 'Trivia App Manager',
 		category: 'Desktop Application',
-		img: 'src/images/eywa_project/eywa.png',
+		img: '/images/eywa_project/eywa.png',
 		date: 'Sept 13, 2022',
 		projectImages: [
 			{
 				id: 1,
 				title: 'Trivia Admin Register',
-				img: 'src/images/eywa_project/register_eywa.png',
+				img: '/images/eywa_project/register_eywa.png',
 			},
 			{
 				id: 2,
 				title: 'Trivia Admin Questions',
-				img: 'src/images/eywa_project/questions_eywa.png',
+				img: '/images/eywa_project/questions_eywa.png',
 			},
 			{
 				id: 3,
 				title: 'Trivia Admin Users',
-				img: 'src/images/eywa_project/users_eywa.png',
+				img: '/images/eywa_project/users_eywa.png',
 			},
 		],
 		projectInfo: {
@@ -196,7 +196,7 @@ const projects = [
 				{
 					id: 1,
 					title: 'Mobile UI',
-					img: 'src/images/eywa_project/menu_eywa.png',
+					img: '/images/eywa_project/menu_eywa.png',
 				}
 			],
 		},
@@ -206,23 +206,23 @@ const projects = [
 		id: 3,
 		title: 'Attendance Control App',
 		category: 'Mobile Application',
-		img: 'src/images/codecrafters_project/panoramic_android.png',
+		img: '/images/codecrafters_project/panoramic_android.png',
 		date: 'Sept 13, 2022',
 		projectImages: [
 			{
 				id: 1,
 				title: 'Trivia Admin Register',
-				img: 'src/images/eywa_project/register_eywa.png',
+				img: '/images/eywa_project/register_eywa.png',
 			},
 			{
 				id: 2,
 				title: 'Trivia Admin Questions',
-				img: 'src/images/eywa_project/questions_eywa.png',
+				img: '/images/eywa_project/questions_eywa.png',
 			},
 			{
 				id: 3,
 				title: 'Trivia Admin Users',
-				img: 'src/images/eywa_project/users_eywa.png',
+				img: '/images/eywa_project/users_eywa.png',
 			},
 		],
 		projectInfo: {
@@ -296,7 +296,7 @@ const projects = [
 				{
 					id: 1,
 					title: 'Mobile UI',
-					img: 'src/images/eywa_project/menu_eywa.png',
+					img: '/images/eywa_project/menu_eywa.png',
 				}
 			],
 		},
@@ -306,23 +306,23 @@ const projects = [
 		id: 4,
 		title: 'Attendance Control Manager',
 		category: 'Desktop Application',
-		img: 'src/images/codecrafters_project/panoramic_android.png',
+		img: '/images/codecrafters_project/panoramic_android.png',
 		date: 'Jan 10, 2023',
 		projectImages: [
 			{
 				id: 1,
 				title: 'Sign In Form',
-				img: 'src/images/codecrafters_project/register_sc.png',
+				img: '/images/codecrafters_project/register_sc.png',
 			},
 			{
 				id: 2,
 				title: 'Landing Form',
-				img: 'src/images/codecrafters_project/landing_sc.png',
+				img: '/images/codecrafters_project/landing_sc.png',
 			},
 			{
 				id: 3,
 				title: 'Users Form',
-				img: 'src/images/codecrafters_project/users_sc.png',
+				img: '/images/codecrafters_project/users_sc.png',
 			},
 		],
 		projectInfo: {
@@ -396,7 +396,7 @@ const projects = [
 				{
 					id: 1,
 					title: 'Mobile UI',
-					img: 'src/images/eywa_project/menu_eywa.png',
+					img: '/images/eywa_project/menu_eywa.png',
 				}
 			],
 		},
@@ -406,23 +406,23 @@ const projects = [
 		id: 5,
 		title: '112 Simulator',
 		category: 'Web Application',
-		img: 'src/images/broggi_project/broggi_image.png',
+		img: '/images/broggi_project/broggi_image.png',
 		date: 'Feb 12, 2022',
 		projectImages: [
 			{
 				id: 1,
 				title: 'Expedients Projecte Broggi',
-				img: 'src/images/broggi_project/expedients_broggi.png',
+				img: '/images/broggi_project/expedients_broggi.png',
 			},
 			{
 				id: 2,
 				title: 'Trivia Admin Questions',
-				img: 'src/images/broggi_project/admin_broggi.png',
+				img: '/images/broggi_project/admin_broggi.png',
 			},
 			{
 				id: 3,
 				title: 'Trivia Admin Users',
-				img: 'src/images/broggi_project/formulari_broggi.png',
+				img: '/images/broggi_project/formulari_broggi.png',
 			},
 		],
 		projectInfo: {

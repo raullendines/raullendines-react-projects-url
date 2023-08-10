@@ -70,6 +70,24 @@ export const moviePage = {
   };
   
   
+  // notFoundPage.js
+export const  notFoundPage = {
+  es: {
+    errorText: '404 - Página no encontrada',
+    paragraphText: 'Lo sentimos, la página que estás buscando no existe.',
+    returnText: 'Volver la la pagina principal'
+  },
+  en: {
+    errorText: '404 - Page not found',
+    paragraphText: "We are sorry, the page you are searching for doesn't exist.",
+    returnText: 'Return to main page'
+  },
+  ca: {
+    errorText: '404 - Pàgina no trobada',
+    paragraphText: 'Ho sentim, la pàgina que estàs buscant no existeix.',
+    returnText: 'Tornar a la pàgina principal'
+  },
+};
   
 
 export default function useLanguage(lang, jsonData) {

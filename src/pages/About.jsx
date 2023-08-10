@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { aboutPage } from '../js/services/languages.js';
-import useLanguage from '../js/services/languages.js';
+import useLanguage, { aboutPage } from '../js/services/languages.js';
 export default function AboutPage() {
 
   const { lang } = useParams();
