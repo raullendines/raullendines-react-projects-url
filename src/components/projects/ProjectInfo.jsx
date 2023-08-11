@@ -1,23 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const ProjectInfo = ({ projectInfo }) => {
 
   return (
-    <div className="block sm:flex gap-0 sm:gap-10 mt-14">
+    <section className="block sm:flex gap-0 sm:gap-10 mt-14">
       {/* Single project left section details */}
-      <div className="w-full sm:w-1/3 text-left">
+      <aside className="w-full sm:w-1/3 text-left">
         {/* Single project client details */}
         <div className="mb-7">
-          <p className="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2">
+          <h2 className="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2">
             {projectInfo.clientHeading}
-          </p>
+          </h2>
           <ul className="leading-loose">
             {projectInfo.companyInfos.map((info) => (
-              <li key={info.title} className="font-general-regular text-ternary-dark dark:text-ternary-light">
+              <li
+                key={info.title}
+                className="font-general-regular text-ternary-dark dark:text-ternary-light"
+              >
                 <span className="font-general-medium">{info.title}: </span>
                 <a
                   href="#"
-                  className={info.title === 'Website' || info.title === 'Phone' ? 'hover:underline cursor-pointer' : ''}
+                  className={
+                    info.title === 'Website' || info.title === 'Phone'
+                      ? 'hover:underline cursor-pointer'
+                      : ''
+                  }
                   aria-label="Project Website and Phone"
                 >
                   {info.details}
@@ -67,13 +74,15 @@ const ProjectInfo = ({ projectInfo }) => {
             ))}
           </div>
         </div>
-      </div>
-
+      </aside>
+      
       {/* Single project right section details */}
-      <div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
-        <p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+      
+      {/* Single project right section details */}
+      <article className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
+        <h2 className="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
           {projectInfo.projectDetailsHeading}
-        </p>
+        </h2>
         {projectInfo.projectDetails.map((projectDetail) => (
           <p
             key={projectDetail.id}
@@ -82,8 +91,8 @@ const ProjectInfo = ({ projectInfo }) => {
             {projectDetail.details}
           </p>
         ))}
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

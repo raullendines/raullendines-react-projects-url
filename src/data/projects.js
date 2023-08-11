@@ -361,7 +361,6 @@ const projects = [
 			],
 		},
 	},
-
 	{
 		id: 5,
 		title: '112 Simulator',

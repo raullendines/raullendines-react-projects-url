@@ -1,51 +1,8 @@
 // Nav.jsx
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-const LangDropdown = ({ selectedLanguage, languages, handleLanguageChange }) => (
-  <div>
-    <select
-      className="text-white"
-      value={selectedLanguage}
-      onChange={(e) => {
-        const selectedLang = e.target.value;
-        handleLanguageChange(selectedLang);
-      }}
-    >
-      {languages.map((language) => (
-        <option key={language} value={language}>
-          {language}
-        </option>
-      ))}
-    </select>
-  </div>
-);
-
-const NavLinks = ({ selectedLanguage, navLinks }) => {
-  const isActive = (match, location) => {
-    if (!match) {
-      return false;
-    }
-    const currentLang = location.pathname.split('/')[1];
-    return currentLang === selectedLanguage;
-  };
-
-  return (
-    <div className={`hidden md:flex items-center space-x-4`}>
-      {navLinks.map((navLink) => (
-        <NavLink
-          key={navLink.path}
-          className={`text-white`}
-          activeClassName={`font-bold`}
-          isActive={(match, location) => isActive(match, location)}
-          to={navLink.to}
-          exact={navLink.exact}
-        >
-          {navLink.text}
-        </NavLink>
-      ))}
-    </div>
-  );
-};
+import { LanguageDropdown } from './LanguageDropdown';
+import { NavLinks } from './NavLinks';
 
 const Nav = () => {
   const { lang } = useParams();
@@ -107,7 +64,7 @@ const Nav = () => {
           
           <NavLinks selectedLanguage={selectedLanguage} navLinks={navLinks} />
 
-          <LangDropdown selectedLanguage={selectedLanguage} languages={languages} handleLanguageChange={handleLanguageChange} />
+          <LanguageDropdown selectedLanguage={selectedLanguage} languages={languages} handleLanguageChange={handleLanguageChange} />
           
         </div>
       </div>

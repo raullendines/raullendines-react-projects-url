@@ -10,8 +10,7 @@ import ProjectsPage from './pages/Projects.jsx';
 import SingleProjectPage from './pages/SingleProject.jsx';
 
 import './styles.css';
-import Nav from './components/Nav.jsx';
-import EnterPassword from './components/EnterPassword.jsx';
+import Nav from './components/Navbar/Nav.jsx';
 
 function App() {
   return (
