@@ -16,7 +16,7 @@ import EnterPassword from './components/EnterPassword.jsx';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col">
+      <div className="flex flex-col max-w-900">
         <div>
           <Nav />
         </div>

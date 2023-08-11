@@ -90,16 +90,6 @@ const projects = [
 				},
 			],
 		},
-		relatedProject: {
-			relatedProjectsHeading: 'Related Projects',
-			relatedProjects: [
-				{
-					id: 1,
-					title: 'Mobile UI',
-					img: '/images/eywa_project/eywa.png',
-				}
-			],
-		},
 	},
 
 	{
@@ -188,16 +178,6 @@ const projects = [
 					icon: 'github',
 					url: 'https://github.com/raullendines/projecte_eywa',
 				},
-			],
-		},
-		relatedProject: {
-			relatedProjectsHeading: 'Related Projects',
-			relatedProjects: [
-				{
-					id: 1,
-					title: 'Mobile UI',
-					img: '/images/eywa_project/menu_eywa.png',
-				}
 			],
 		},
 	},
@@ -290,16 +270,6 @@ const projects = [
 				},
 			],
 		},
-		relatedProject: {
-			relatedProjectsHeading: 'Related Projects',
-			relatedProjects: [
-				{
-					id: 1,
-					title: 'Mobile UI',
-					img: '/images/eywa_project/menu_eywa.png',
-				}
-			],
-		},
 	},
 
 	{
@@ -388,16 +358,6 @@ const projects = [
 					icon: 'github',
 					url: 'https://github.com/raullendines/StartecnicsAndroid',
 				},
-			],
-		},
-		relatedProject: {
-			relatedProjectsHeading: 'Related Projects',
-			relatedProjects: [
-				{
-					id: 1,
-					title: 'Mobile UI',
-					img: '/images/eywa_project/menu_eywa.png',
-				}
 			],
 		},
 	},

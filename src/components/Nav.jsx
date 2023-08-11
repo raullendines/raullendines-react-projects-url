@@ -20,27 +20,37 @@ const LangDropdown = ({ selectedLanguage, languages, handleLanguageChange }) => 
   </div>
 );
 
-const NavLinks = ({ location, selectedLanguage, navLinks }) => (
-  <div className={`hidden md:flex items-center space-x-4`}>
-    {navLinks.map((navLink) => (
-      <NavLink
-        key={navLink.path}
-        className={`text-white ${
-          location.pathname.includes(navLink.path) ? 'font-bold' : ''
-        }`}
-        to={navLink.to}
-        exact={navLink.exact}
-      >
-        {navLink.text}
-      </NavLink>
-    ))}
-  </div>
-);
+const NavLinks = ({ selectedLanguage, navLinks }) => {
+  const isActive = (match, location) => {
+    if (!match) {
+      return false;
+    }
+    const currentLang = location.pathname.split('/')[1];
+    return currentLang === selectedLanguage;
+  };
+
+  return (
+    <div className={`hidden md:flex items-center space-x-4`}>
+      {navLinks.map((navLink) => (
+        <NavLink
+          key={navLink.path}
+          className={`text-white`}
+          activeClassName={`font-bold`}
+          isActive={(match, location) => isActive(match, location)}
+          to={navLink.to}
+          exact={navLink.exact}
+        >
+          {navLink.text}
+        </NavLink>
+      ))}
+    </div>
+  );
+};
 
 const Nav = () => {
   const { lang } = useParams();
   const [isOpen, setOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(lang); // Initialize with URL parameter
+  const [selectedLanguage, setSelectedLanguage] = useState(lang || 'en'); // Set a default language if lang is not available
   const languages = ['en', 'ca', 'es'];
 
   const location = useLocation();
@@ -52,13 +62,8 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    setSelectedLanguage(lang);
+    setSelectedLanguage(lang || 'en');
   }, [lang]);
-
-  useEffect(() => {
-    const newLang = location.pathname.split('/')[1];
-    setSelectedLanguage(newLang);
-  }, [location]);
 
   const navLinks = [
     {
@@ -100,7 +105,7 @@ const Nav = () => {
           </div>
           
           
-          <NavLinks location={location} selectedLanguage={selectedLanguage} navLinks={navLinks} />
+          <NavLinks selectedLanguage={selectedLanguage} navLinks={navLinks} />
 
           <LangDropdown selectedLanguage={selectedLanguage} languages={languages} handleLanguageChange={handleLanguageChange} />
           
@@ -111,3 +116,4 @@ const Nav = () => {
 };
 
 export default Nav;
+

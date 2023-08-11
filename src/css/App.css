@@ -2,6 +2,12 @@
 :root {
   --navbar-height: 80px;
 }
+
+.max-w-900{
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+}
 .page {
   display: flex;
   flex-direction: column;

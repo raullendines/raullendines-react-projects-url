@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import ProjectHeader from '../components/projects/ProjectHeader';
 import ProjectGallery from '../components/projects/ProjectGallery';
 import ProjectInfo from '../components/projects/ProjectInfo';
-import ProjectRelatedProjects from '../components/projects/ProjectRelatedProjects';
 import projects from '../data/projects';
 
 function SingleProject() {
@@ -28,10 +27,7 @@ function SingleProject() {
           {/* Project information */}
           <ProjectInfo projectInfo={project.projectInfo} />
 
-          {/* Project related projects */}
-          {project.relatedProject && (
-            <ProjectRelatedProjects relatedProject={project.relatedProject} />
-          )}
+          
         </>
       )}
     </div>
