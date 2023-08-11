@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Square } from "./Square.jsx"
+import React from 'react';
 
 export function GameBoard({ board, updateBoard }) {
     
