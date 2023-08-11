@@ -14,6 +14,7 @@ export const homePage = {
         description: 'Aquesta és la pàgina principal',
         button: 'Anar al sobre mi'
     }
+    
 }
 
 // aboutPageData.js
