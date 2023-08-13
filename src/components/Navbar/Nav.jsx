@@ -26,7 +26,7 @@ const Nav = () => {
     {
       text: 'Home',
       to: `/${selectedLanguage}`,
-      path: '',
+      path: '', // Set the path to an empty string for the home link
     },
     {
       text: 'About',
@@ -36,9 +36,10 @@ const Nav = () => {
     {
       text: 'Projects',
       to: `/${selectedLanguage}/projects`,
-      path: 'projects',
+      path: 'projects', // Set the path to match the subpath in the URLs
     },
   ];
+  
 
   return (
     <nav className="bg-primary">

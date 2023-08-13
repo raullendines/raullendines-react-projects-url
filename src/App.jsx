@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/Home.jsx';
 import NotFound from './pages/NotFound.jsx';
 import AboutPage from './pages/About.jsx';
@@ -13,6 +13,7 @@ import './styles.css';
 import Nav from './components/Navbar/Nav.jsx';
 
 function App() {
+  
   return (
     <Router>
       <div className="flex flex-col max-w-900">
@@ -23,6 +24,7 @@ function App() {
         <div className="flex-grow">
           <Suspense fallback={null}>
             <Routes>
+              <Route path="/" element={<Navigate to="/en" />} />
               <Route path="/:lang/" element={<HomePage />} />
               <Route path="/:lang/about" element={<AboutPage />} />
               <Route path="/:lang/projects" element={<ProjectsPage />} />
