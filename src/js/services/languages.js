@@ -1,18 +1,18 @@
 export const homePage = {
     es: {
-        title: 'Pagina principal',
-        description: 'Esta es la pagina principal',
-        button: 'Ir al sobre mi'
+      title: `Hola, soy Raül`,
+      typewriter: ["Actualmente soy estudiante de Informática", "Aprendiz", "Dedicado"],
+      paragraph: `Soy un Desarrollador Full Stack que busca diversas formas de mejorar mis habilidades a través de la resolución de problemas y la creación de varios proyectos. Haz clic aquí para conocer más sobre mí.`
     },
     en: {
-        title: 'Homepage',
-        description: 'This is the main page',
-        button: 'Go to the about page'
+        title: `Hey, I'm Raül`,
+        typewriter: ["A Computer Science Student", "Learner", "Dedicated"],
+        paragraph: `I'm currently a Full Stack Developer seeking many ways to improve my skills through problem-solving and creating various projects! Click here to learn more about me.`
     },
     ca: {
-        title: 'Pàgina principal',
-        description: 'Aquesta és la pàgina principal',
-        button: 'Anar al sobre mi'
+      title: `Hola, em dic Raül`,
+      typewriter: ["Actualment sóc estudiant d'Informàtica", "Aprenent", "Dedicat"],
+      paragraph: `Sóc un Desenvolupador Full Stack que busca diverses formes de millorar les meves habilitats mitjançant la resolució de problemes i la creació de diversos projectes. Fes clic aquí per a conèixer més sobre mi.`
     }
     
 }

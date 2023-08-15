@@ -1,32 +1,32 @@
-// Nav.jsx
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { LanguageDropdown } from './LanguageDropdown';
+import { CustomLanguageDropdown } from './LanguageDropdown';
 import { NavLinks } from './NavLinks';
 
 const Nav = () => {
   const { lang } = useParams();
   const [isOpen, setOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(lang || 'en'); // Set a default language if lang is not available
+  const [selectedLanguage, setSelectedLanguage] = useState(lang || 'en');
   const languages = ['en', 'ca', 'es'];
 
   const location = useLocation();
   const navigate = useNavigate();
-
   const handleLanguageChange = (selectedLang) => {
-    const newPath = location.pathname.replace(/\/[a-z]+(?=\/|$)/, `/${selectedLang}`);
+    const newPath = `/${selectedLang}${location.pathname.replace(/\/[a-z]+(?=\/|$)/, '')}`;
     navigate(newPath);
   };
-
+  
   useEffect(() => {
     setSelectedLanguage(lang || 'en');
   }, [lang]);
+  
+  
 
-  const navLinks = [
+  /* const navLinks = [
     {
       text: 'Home',
       to: `/${selectedLanguage}`,
-      path: '', // Set the path to an empty string for the home link
+      path: '',
     },
     {
       text: 'About',
@@ -36,10 +36,64 @@ const Nav = () => {
     {
       text: 'Projects',
       to: `/${selectedLanguage}/projects`,
-      path: 'projects', // Set the path to match the subpath in the URLs
+      path: 'projects',
     },
-  ];
-  
+  ]; */
+
+  // navLinks.js
+  const navLinks = {
+    es: [
+      {
+        text: 'Home',
+        to: `/${selectedLanguage}`,
+        path: '',
+      },
+      {
+        text: 'Acerca de',
+        to: `/${selectedLanguage}/about`,
+        path: 'about',
+      },
+      {
+        text: 'Proyectos',
+        to: `/${selectedLanguage}/projects`,
+        path: 'projects',
+      },
+    ],
+    en: [
+      {
+        text: 'Home',
+        to: `/${selectedLanguage}`,
+        path: '',
+      },
+      {
+        text: 'About',
+        to: `/${selectedLanguage}/about`,
+        path: 'about',
+      },
+      {
+        text: 'Projects',
+        to: `/${selectedLanguage}/projects`,
+        path: 'projects',
+      },
+    ],
+    ca: [
+      {
+        text: 'Inici',
+        to: `/${selectedLanguage}`,
+        path: '',
+      },
+      {
+        text: 'Sobre nosaltres',
+        to: `/${selectedLanguage}/about`,
+        path: 'about',
+      },
+      {
+        text: 'Projectes',
+        to: `/${selectedLanguage}/projects`,
+        path: 'projects',
+      },
+    ],
+  }[selectedLanguage];
 
   return (
     <nav className="bg-primary">
@@ -62,11 +116,16 @@ const Nav = () => {
             </button>
           </div>
           
+          <NavLinks 
+            selectedLanguage={selectedLanguage} 
+            navLinks={navLinks} 
+          />
           
-          <NavLinks selectedLanguage={selectedLanguage} navLinks={navLinks} />
-
-          <LanguageDropdown selectedLanguage={selectedLanguage} languages={languages} handleLanguageChange={handleLanguageChange} />
-          
+          <CustomLanguageDropdown
+            languages={languages}
+            defaultLanguage={selectedLanguage}
+            onLanguageChange={handleLanguageChange}
+          />
         </div>
       </div>
     </nav>
@@ -74,4 +133,3 @@ const Nav = () => {
 };
 
 export default Nav;
-

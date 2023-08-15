@@ -19,7 +19,6 @@ function TicTacToe() {
     setBoard(Array(9).fill(null))
     setWinner(null)
     const number = randomTurn() 
-    console.log(number)
 
     number == 0 ? setTurn(TURNS.X) : setTurn(TURNS.O)
   }

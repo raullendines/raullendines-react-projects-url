@@ -1,6 +1,14 @@
 
 :root {
   --navbar-height: 80px;
+  --principal: #202B38;
+  --violet: #6A57A5;
+  --terciary: #291C40;
+  --fourth: #441C40;
+  --fifth: #E24DAF;
+  --yellow: #E09F20;
+  --creme: #FFEDCB;
+  --brown: #8A7356
 }
 
 .max-w-900{
@@ -16,6 +24,9 @@
   width: 100%;
   max-width: 800px;
 }
+
+
+/* MOVIE COMPONENT */
 
 .title{
  text-align: center;
@@ -50,7 +61,6 @@ form {
   text-align: center;
 }
 
-
 .movie {
   text-align: center;
 }
@@ -76,3 +86,50 @@ form {
 #sidebar a.active {
   color: red;
 }
+
+/* END MOVIE COMPONENT */
+
+
+/* HOME COMPONENT */
+
+.center-parent{
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+.home-title-text{
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--creme)
+
+}
+
+.home-typewriter-text{
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--yellow);
+}
+
+.home-paragraph-text{
+  color: var(--creme);
+  font-size: 1.5rem;
+  display: flex;
+  margin: 10px 0;
+}
+
+
+/* END HOME COMPONENT */
+
+
+/* NAV COMPONENT */
+
+
+.nav-text{
+  font-weight: 700;
+  color: var(--creme)
+}
+
+
+/* END NAV COMPONENT */
+

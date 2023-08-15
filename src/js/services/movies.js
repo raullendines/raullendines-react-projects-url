@@ -28,7 +28,6 @@ export const searchBooks = async () => {
     try{
 
         const sample = require('../../assets/books.json');
-        console.log(sample);
 
         /* const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
         const json = await response.json()

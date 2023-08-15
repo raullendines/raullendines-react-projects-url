@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProjectHeader from '../components/projects/ProjectHeader';
-import ProjectGallery from '../components/projects/ProjectGallery';
-import ProjectInfo from '../components/projects/ProjectInfo';
+import ProjectHeader from '../components/Projects/ProjectHeader';
+import ProjectGallery from '../components/Projects/ProjectGallery';
+import ProjectInfo from '../components/Projects/ProjectInfo';
 import projects from '../data/projects';
 
 function SingleProject() {

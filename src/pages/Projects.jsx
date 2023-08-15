@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectsGrid from '../components/projects/ProjectsGrid';
+import ProjectsGrid from '../components/Projects/ProjectsGrid';
 
 function Projects() {
   return (
