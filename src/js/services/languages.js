@@ -1,21 +1,21 @@
 export const homePage = {
-    es: {
-      title: `Hola, soy Raül`,
-      typewriter: ["Actualmente soy estudiante de Informática", "Aprendiz", "Dedicado"],
-      paragraph: `Soy un Desarrollador Full Stack que busca diversas formas de mejorar mis habilidades a través de la resolución de problemas y la creación de varios proyectos. Haz clic aquí para conocer más sobre mí.`
-    },
-    en: {
-        title: `Hey, I'm Raül`,
-        typewriter: ["A Computer Science Student", "Learner", "Dedicated"],
-        paragraph: `I'm currently a Full Stack Developer seeking many ways to improve my skills through problem-solving and creating various projects! Click here to learn more about me.`
-    },
-    ca: {
-      title: `Hola, em dic Raül`,
-      typewriter: ["Actualment sóc estudiant d'Informàtica", "Aprenent", "Dedicat"],
-      paragraph: `Sóc un Desenvolupador Full Stack que busca diverses formes de millorar les meves habilitats mitjançant la resolució de problemes i la creació de diversos projectes. Fes clic aquí per a conèixer més sobre mi.`
-    }
-    
-}
+  es: {
+    title: `Hola, soy Raül`,
+    typewriter: ["Actualmente soy estudiante de Informática", "Aprendiz", "Dedicado"],
+    paragraph: `Soy un Desarrollador Full Stack que busca diversas formas de mejorar mis habilidades a través de la resolución de problemas y la creación de varios proyectos. ¡Haz clic aquí para conocer más sobre mí!`
+  },
+  en: {
+    title: `Hey, I'm Raül`,
+    typewriter: ["A Computer Science Student", "Learner", "Dedicated"],
+    paragraph: `I'm currently a Full Stack Developer seeking different ways of improving my skills through problem-solving and the creation of various projects! Click here to learn more about me.`
+  },
+  ca: {
+    title: `Hola, em dic Raül`,
+    typewriter: ["Actualment sóc estudiant d'Informàtica", "Aprenent", "Dedicat"],
+    paragraph: `Sóc un Desenvolupador Full Stack que busca diverses formes de millorar les meves habilitats mitjançant la resolució de problemes i la creació de diversos projectes. Fes clic aquí per conèixer més sobre mi.`
+  }
+};
+
 
 // aboutPageData.js
 export const aboutPage = {
