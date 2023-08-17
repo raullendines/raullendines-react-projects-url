@@ -16,25 +16,60 @@ export const homePage = {
   }
 };
 
+const navBar = {
+  es: [
+    {
+      text: 'Home',
+    },
+    {
+      text: 'Acerca de',
+    },
+    {
+      text: 'Proyectos',
+    },
+  ],
+  en: [
+    {
+      text: 'Home',
+    },
+    {
+      text: 'About',
+    },
+    {
+      text: 'Projects',
+    },
+  ],
+  ca: [
+    {
+      text: 'Inici',
+    },
+    {
+      text: 'Sobre nosaltres',
+    },
+    {
+      text: 'Projectes',
+    },
+  ],
+};
 
 // aboutPageData.js
 export const aboutPage = {
-    es: {
-      title: 'Página de Sobre mi',
-      description: 'Esta es la página de sobre mi',
-      button: 'Ir a la página de inicio',
-    },
-    en: {
-      title: 'About Page',
-      description: 'This is the About page',
-      button: 'Go to the homepage',
-    },
-    ca: {
-      title: 'Pàgina d\'Informació',
-      description: 'Aquesta és la pàgina d\'Informació',
-      button: 'Anar a la pàgina d\'inici',
-    },
-  };
+  es: {
+    title: 'Página de Sobre mi',
+    description: 'Esta es la página de sobre mi',
+    button: 'Ir a la página de inicio',
+  },
+  en: {
+    title: 'About Page',
+    description: 'This is the About page',
+    button: 'Go to the homepage',
+  },
+  ca: {
+    title: 'Pàgina d\'Informació',
+    description: 'Aquesta és la pàgina d\'Informació',
+    button: 'Anar a la pàgina d\'inici',
+  },
+};
 
 // moviePageData.js
 export const moviePage = {

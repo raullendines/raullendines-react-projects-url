@@ -19,81 +19,6 @@ const Nav = () => {
   useEffect(() => {
     setSelectedLanguage(lang || 'en');
   }, [lang]);
-  
-  
-
-  /* const navLinks = [
-    {
-      text: 'Home',
-      to: `/${selectedLanguage}`,
-      path: '',
-    },
-    {
-      text: 'About',
-      to: `/${selectedLanguage}/about`,
-      path: 'about',
-    },
-    {
-      text: 'Projects',
-      to: `/${selectedLanguage}/projects`,
-      path: 'projects',
-    },
-  ]; */
-
-  // navLinks.js
-  const navLinks = {
-    es: [
-      {
-        text: 'Home',
-        to: `/${selectedLanguage}`,
-        path: '',
-      },
-      {
-        text: 'Acerca de',
-        to: `/${selectedLanguage}/about`,
-        path: 'about',
-      },
-      {
-        text: 'Proyectos',
-        to: `/${selectedLanguage}/projects`,
-        path: 'projects',
-      },
-    ],
-    en: [
-      {
-        text: 'Home',
-        to: `/${selectedLanguage}`,
-        path: '',
-      },
-      {
-        text: 'About',
-        to: `/${selectedLanguage}/about`,
-        path: 'about',
-      },
-      {
-        text: 'Projects',
-        to: `/${selectedLanguage}/projects`,
-        path: 'projects',
-      },
-    ],
-    ca: [
-      {
-        text: 'Inici',
-        to: `/${selectedLanguage}`,
-        path: '',
-      },
-      {
-        text: 'Sobre nosaltres',
-        to: `/${selectedLanguage}/about`,
-        path: 'about',
-      },
-      {
-        text: 'Projectes',
-        to: `/${selectedLanguage}/projects`,
-        path: 'projects',
-      },
-    ],
-  }[selectedLanguage];
 
   return (
     <nav className="bg-primary">
@@ -116,10 +41,7 @@ const Nav = () => {
             </button>
           </div>
           
-          <NavLinks 
-            selectedLanguage={selectedLanguage} 
-            navLinks={navLinks} 
-          />
+          <NavLinks selectedLanguage={selectedLanguage} /> {/* Pass selectedLanguage */}
           
           <CustomLanguageDropdown
             languages={languages}
