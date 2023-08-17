@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useLanguage, { aboutPage } from '../js/services/languages.js';
 export default function AboutPage() {
 
@@ -7,11 +7,10 @@ export default function AboutPage() {
 
 
   return (
-    <div>
+    <div className='h-max'>
       <h1>{i18n.title}</h1>
       <div>
         <p>{i18n.desciption}</p>
-        <Link to='/es/'>{i18n.button}</Link>
       </div>
     </div>
   );

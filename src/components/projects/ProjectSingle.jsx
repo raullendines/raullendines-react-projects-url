@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function ProjectSingle({ project }) {
   return (
-    <Link
-      to={`/projects/projects/${project.id}`}
+    <div
       className="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
       aria-label="Single Project"
     >
@@ -17,7 +15,7 @@ function ProjectSingle({ project }) {
         </p>
         <span className="font-general-medium text-lg text-ternary-dark dark:text-ternary-light">{project.category}</span>
       </div>
-    </Link>
+    </div>
   );
 }
 

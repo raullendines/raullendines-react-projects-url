@@ -15,32 +15,20 @@ import Nav from './components/Navbar/Nav.jsx';
 function App() {
   
   return (
-    <Router>
+    <>
       <div className="flex flex-col max-w-900">
         <div>
-          <Nav />
+          <Nav languages={['en', 'es', 'ca']} />
         </div>
 
         <div className="flex-grow">
-          <Suspense fallback={null}>
-            <Routes>
-              <Route path="/" element={<Navigate to="/en" />} />
-              <Route path="/:lang/" element={<HomePage />} />
-              <Route path="/:lang/about" element={<AboutPage />} />
-              <Route path="/:lang/projects" element={<ProjectsPage />} />
-              <Route path="/:lang/movies" element={<MoviePage />} />
-              <Route path="/:lang/search/:query" element={<SearchPage />} />
-              <Route path="/:lang/tictactoe" element={<TicTacToe />} />
-              <Route path="/:lang/*" element={<NotFound />} />
-              <Route path="/:lang/projects/:projectId" element={<SingleProjectPage />} />
-
-            </Routes>
-          </Suspense>
+          <HomePage/>
+          <AboutPage/>
+          <ProjectsPage/>
         </div>
-
-        {/*<EnterPassword/>*/}
       </div>
-    </Router>
+    </>
+   
   );
 }
 
